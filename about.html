@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - NeuroLinked</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo.png" />
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <!-- css -->
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link href="./assets/css/about.css" rel="stylesheet" />
+    <link href="./assets/css/load.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- preloader -->
+    <div
+      id="preloader"
+      class="fixed inset-0 z-[9999999999999999] bg-black flex items-center justify-center"
+    >
+      <canvas
+        id="networkCanvas"
+        class="absolute inset-0 w-full h-full z-0"
+      ></canvas>
+      <div class="relative z-10 flex flex-col items-center gap-4">
+        <div class="neuro-spinner"></div>
+        <p class="text-white text-sm tracking-widest opacity-50 font-mono">
+          Loading
+        </p>
+      </div>
+    </div>
+
+    <!-- =======================
+      Header
+    ======================== -->
+    <header class="header" id="header">
+      <!-- desktop navigation -->
+      <nav class="nav-dekstop container mx-auto w-5/6">
+        <div class="nav-menu left">
+          <ul class="nav__list">
+            <li>
+              <a href="index.html" class="nav__link link">
+                <i class="bx bxs-home"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="dropdown__item">
+              <div class="nav__link">
+                Explore
+                <i class="bx bx-chevron-down dropdown__arrow"></i>
+              </div>
+              <ul class="dropdown__menu">
+                <li>
+                  <a href="explore_aspirations.html" class="dropdown__link">
+                    <i class="bx bx-compass"></i> Explore Aspirations
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <a href="write_aspiration.html" class="dropdown__link">
+                    <i class="bx bx-edit-alt"></i> Write Aspiration
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <a href="explore_project.html" class="dropdown__link">
+                    <i class="bx bx-folder-open"></i> Explore Projects
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="createproject.html" class="nav__link link">
+                <i class="bx bx-plus-circle"></i>
+                <span>Create Project</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav__data">
+          <a href="index.html" class="nav__logo">
+            <img
+              src="./assets/img/logo.png"
+              alt=""
+              style="width: 50px; height: 50px"
+            />
+            <h1
+              class="text-indigo-500 text-2xl font-bold bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+            >
+              NEUROLINKED
+            </h1>
+          </a>
+        </div>
+        <div class="nav-menu right">
+          <ul class="nav__list">
+            <li>
+              <a href="about.html" class="nav__link link">
+                <i class="bx bx-info-circle"></i>
+                <span>About</span>
+              </a>
+            </li>
+            <li>
+              <a href="login.html" class="nav__link link">
+                <i class="bx bx-log-in"></i>
+                <span>Sign In</span>
+              </a>
+            </li>
+            <div>
+              <a href="write_aspiration.html" class="nav__linkk">
+                <span class="btv"
+                  ><i class="bx bx-edit-alt wa"></i>Share Your Vision</span
+                >
+              </a>
+            </div>
+          </ul>
+        </div>
+      </nav>
+      <!-- mobile navigation -->
+      <nav class="nav-mobile container">
+        <div class="nav__data mx-auto w-5/6">
+          <a href="index.html" class="nav__logo logo_mobile">
+            <img
+              src="./assets/img/logo.png"
+              alt=""
+              style="width: 50px; height: 50px"
+            />
+            <h1
+              class="text-indigo-500 text-1xl font-bold bg-gradient-to-r from-indigo-400 via-indigo-500 to-indigo-600 bg-clip-text text-transparent"
+            >
+              NEUROLINKED
+            </h1>
+          </a>
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="bx bx-menu nav__burger"></i>
+            <i class="bx bx-x nav__close"></i>
+          </div>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li>
+              <a href="index.html" class="nav__link link">
+                <i class="bx bxs-home"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="dropdown__item">
+              <div class="nav__link">
+                Explore
+                <i class="bx bx-chevron-down dropdown__arrow"></i>
+              </div>
+              <ul class="dropdown__menu">
+                <li>
+                  <a href="explore_aspirations.html" class="dropdown__link">
+                    <i class="bx bx-compass"></i> Explore Aspirations
+                  </a>
+                </li>
+                <li>
+                  <a href="write_aspiration.html" class="dropdown__link">
+                    <i class="bx bx-edit-alt"></i> Write Aspiration
+                  </a>
+                </li>
+                <li>
+                  <a href="explore_project.html" class="dropdown__link">
+                    <i class="bx bx-folder-open"></i> Explore Projects
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="createproject.html" class="nav__link link">
+                <i class="bx bx-plus-circle"></i>
+                <span>Create Project</span>
+              </a>
+            </li>
+            <li>
+              <a href="about.html" class="nav__link link">
+                <i class="bx bx-info-circle"></i>
+                <span>About</span>
+              </a>
+            </li>
+            <li>
+              <a href="login.html" class="nav__link link">
+                <i class="bx bx-log-in"></i>
+                <span>Sign In</span>
+              </a>
+            </li>
+            <div>
+              <a href="write_aspiration.html" class="nav__linkk">
+                <span class="btv"
+                  ><i class="bx bx-edit-alt wa"></i>Share Your Vision</span
+                >
+              </a>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- =======================
+      Hero Section
+    ======================== -->
+    <section
+      class="hero-container h-screen bg-cover bg-center relative"
+      style="background-image: url('./assets/img/bg1.jpg')"
+    >
+      <div class="absolute inset-0 bg-black/60 z-0"></div>
+      <div
+        class="absolute top-20 left-10 w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-purple-500/30 animate-float"
+      >
+        <i class="bx bx-brain text-2xl text-purple-300"></i>
+      </div>
+      <div
+        class="absolute top-32 right-16 w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-indigo-500/30 animate-float-delayed"
+      >
+        <i class="bx bx-network-chart text-lg text-indigo-300"></i>
+      </div>
+      <div
+        class="absolute bottom-32 left-20 w-14 h-14 bg-pink-500/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-pink-500/30 animate-float-slow"
+      >
+        <i class="bx bx-group text-xl text-pink-300"></i>
+      </div>
+
+      <div
+        class="hero-content flex justify-center items-center h-full relative z-10"
+      >
+        <div class="w-5/6 mx-auto text-center px-6">
+          <h2 class="hero-title font-display font-bold mb-6 leading-tight">
+            We Craft<br />
+            <span class="text-indigo-500"> Connections </span><br />
+            & Digital<br />Experiences
+          </h2>
+          <p
+            class="text-base md:text-lg text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+          >
+            Elevate your innovation with collaborative design solutions. From
+            brainstorming to launch, we bring your vision to life with
+            cutting-edge digital experiences.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="write_aspiration.html"
+              class="inline-flex items-center justify-center bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25"
+            >
+              Let's Talk
+            </a>
+            <a
+              href="explore_aspirations.html "
+              class="inline-flex items-center justify-center border-2 border-indigo-500 text-indigo-400 hover:bg-indigo-500 hover:text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300"
+            >
+              Solutions for Innovation
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      Partner Logos
+    ======================== -->
+    <section class="py-16 bg-black border-b border-indigo-500/20">
+      <div class="container mx-auto w-5/6">
+        <div
+          class="flex flex-wrap justify-center items-center gap-8 opacity-60"
+        >
+          <div class="text-base md:text-lg font-bold text-gray-400">
+            280+ Satisfied Clients
+          </div>
+          <div class="flex items-center gap-8">
+            <i class="bx bxl-google text-2xl text-gray-400"></i>
+            <i class="bx bxl-microsoft text-2xl text-gray-400"></i>
+            <i class="bx bxl-apple text-2xl text-gray-400"></i>
+            <i class="bx bxl-meta text-2xl text-gray-400"></i>
+            <i class="bx bxl-amazon text-2xl text-gray-400"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      About
+    ======================== -->
+    <section id="about" class="py-24 bg-black text-white">
+      <div class="container mx-auto w-5/6">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+          <div class="flex-1">
+            <div
+              class="inline-flex items-center bg-indigo-500/20 text-indigo-300 px-4 py-1.5 rounded-full text-sm font-medium mb-5 border border-indigo-500/30 shadow-sm"
+            >
+              About Us
+            </div>
+
+            <h2
+              class="text-4xl md:text-5xl font-display font-bold leading-snug mb-6"
+            >
+              Discover
+              <span
+                class="bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                >NEUROLINKED</span
+              >
+            </h2>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-5 text-justify">
+              Neurolinked is a platform for sharing ideas, gathering public
+              aspirations, and launching creative projects—open to everyone,
+              from students to professionals.
+            </p>
+            <p class="text-gray-400 text-md leading-relaxed mb-8 text-justify">
+              Explore diverse ideas, connect through GitHub or Discord, and
+              build real-world solutions together. We value openness,
+              initiative, and shared purpose.
+            </p>
+
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div
+                class="neuro-card text-center bg-white/5 rounded-xl p-5 border border-indigo-500/10"
+              >
+                <div class="text-3xl font-bold text-indigo-400 mb-1">∞</div>
+                <div class="text-sm text-gray-400">Ideas Without Limits</div>
+              </div>
+              <div
+                class="neuro-card text-center bg-white/5 rounded-xl p-5 border border-purple-500/10"
+              >
+                <div class="text-3xl font-bold text-purple-400 mb-1">Open</div>
+                <div class="text-sm text-gray-400">For Everyone</div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="bg-indigo-500/10 rounded-xl p-4 border border-indigo-500/20 text-indigo-400 font-medium text-center hover:bg-indigo-500/20 transition"
+              >
+                Idea Sharing
+              </div>
+              <div
+                class="bg-purple-500/10 rounded-xl p-4 border border-purple-500/20 text-purple-400 font-medium text-center hover:bg-purple-500/20 transition"
+              >
+                Collaboration
+              </div>
+              <div
+                class="bg-pink-500/10 rounded-xl p-4 border border-pink-500/20 text-pink-400 font-medium text-center hover:bg-pink-500/20 transition"
+              >
+                Aspirations
+              </div>
+              <div
+                class="bg-indigo-500/10 rounded-xl p-4 border border-indigo-500/20 text-indigo-400 font-medium text-center hover:bg-indigo-500/20 transition"
+              >
+                Creative Projects
+              </div>
+            </div>
+          </div>
+
+          <div class="flex-1">
+            <div class="relative shadow-xl rounded-2xl overflow-hidden">
+              <img
+                src="./assets/img/634633e8a46d0.jpg"
+                alt="Neurolinked team brainstorming"
+                class="w-full h-auto object-cover border border-indigo-500/20"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      Mission & Vision
+    ======================== -->
+    <section class="mission-section py-20">
+      <div class="container mx-auto w-5/6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+          <div class="mission-card">
+            <div class="icon-wrapper">
+              <i class="bx bx-target-lock text-4xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold font-display mb-4">Our Mission</h3>
+            <ul class="space-y-3 text-gray-300">
+              <li class="flex items-start gap-3">
+                <i class="bx bx-check text-purple-400 text-xl mt-1"></i>
+                <span
+                  >To promote a culture of idea-sharing and open thinking in
+                  technology and innovation</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="bx bx-check text-purple-400 text-xl mt-1"></i>
+                <span
+                  >To facilitate the transformation of ideas into real actions
+                  through collaboration</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="bx bx-check text-purple-400 text-xl mt-1"></i>
+                <span
+                  >To connect individuals with shared interests and visions to
+                  create positive impact</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="bx bx-check text-purple-400 text-xl mt-1"></i>
+                <span
+                  >To provide fair access for anyone to express and develop
+                  ideas regardless of background</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="vision-card">
+            <div class="icon-wrapper">
+              <i class="bx bx-bulb text-4xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold font-display mb-4">Our Vision</h3>
+            <p class="text-gray-300 text-lg leading-relaxed">
+              To ensure that great ideas don't stay trapped in the mind, but
+              grow, spark conversation, and ultimately come to life through
+              collective action. We envision a world where innovation is
+              democratized and every voice has the power to shape the future.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      Features
+    ======================== -->
+    <section
+      class="features-section py-20 bg-gradient-to-r from-purple-900/10 to-indigo-900/10"
+    >
+      <div class="container mx-auto w-5/6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold font-display mb-6">
+            What Makes Us
+            <span class="text-indigo-500">Different</span>
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            NeuroLinked offers a comprehensive platform designed to nurture
+            innovation from conception to realization.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bx bx-share-alt text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Public Aspirations</h3>
+            <p class="text-gray-300">
+              Share your ideas openly with the community. From simple concepts
+              to complex innovations, every aspiration can find its audience and
+              potential collaborators.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bx bx-group text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Projects & Collaboration</h3>
+            <p class="text-gray-300">
+              Trans form aspirations into actionable projects. Create, explore,
+              and join initiatives that align with your interests and expertise.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bx bx-category text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Explore by Category</h3>
+            <p class="text-gray-300">
+              Discover ideas and projects across various domains including
+              technology, health, education, music, and social impact
+              initiatives.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bx bx-brain text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">AI-Powered Matching</h3>
+            <p class="text-gray-300">
+              Our intelligent system helps connect like-minded innovators and
+              matches projects with the right collaborators based on skills and
+              interests.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bx bx-shield-alt-2 text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Safe & Inclusive</h3>
+            <p class="text-gray-300">
+              We provide a secure, inclusive environment that welcomes all
+              generations of changemakers regardless of their background or
+              experience level.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bx bx-trending-up text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Impact Tracking</h3>
+            <p class="text-gray-300">
+              Monitor the progress of your projects and see the real-world
+              impact of collaborative innovation within our community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      Who We Serve
+    ======================== -->
+    <section class="audience-section py-20">
+      <div class="container mx-auto w-5/6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold font-display mb-6">
+            Who Is This <span class="text-indigo-500">Platform</span> For?
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            NeuroLinked is open to everyone with ideas and a spirit of
+            collaboration.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="audience-card">
+            <div class="audience-icon">
+              <i class="bx bx-user text-2xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">Students</h4>
+            <p class="text-sm text-gray-400">
+              Young minds with fresh perspectives and innovative ideas
+            </p>
+          </div>
+
+          <div class="audience-card">
+            <div class="audience-icon">
+              <i class="bx bx-briefcase text-2xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">Professionals</h4>
+            <p class="text-sm text-gray-400">
+              Experienced individuals looking to make an impact
+            </p>
+          </div>
+
+          <div class="audience-card">
+            <div class="audience-icon">
+              <i class="bx bx-code-alt text-2xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">Developers</h4>
+            <p class="text-sm text-gray-400">
+              Technical experts ready to build the future
+            </p>
+          </div>
+
+          <div class="audience-card">
+            <div class="audience-icon">
+              <i class="bx bx-palette text-2xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">Designers</h4>
+            <p class="text-sm text-gray-400">
+              Creative minds shaping user experiences
+            </p>
+          </div>
+
+          <div class="audience-card">
+            <div class="audience-icon">
+              <i class="bx bx-search text-2xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">Researchers</h4>
+            <p class="text-sm text-gray-400">
+              Scientists and academics pushing boundaries
+            </p>
+          </div>
+
+          <div class="audience-card">
+            <div class="audience-icon">
+              <i class="bx bx-group text-2xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">Communities</h4>
+            <p class="text-sm text-gray-400">
+              Organizations working for social change
+            </p>
+          </div>
+
+          <div class="audience-card">
+            <div class="audience-icon">
+              <i class="bx bx-rocket text-2xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">Entrepreneurs</h4>
+            <p class="text-sm text-gray-400">
+              Visionaries building the next big thing
+            </p>
+          </div>
+
+          <div class="audience-card">
+            <div class="audience-icon">
+              <i class="bx bx-heart text-2xl"></i>
+            </div>
+            <h4 class="font-bold mb-2">Changemakers</h4>
+            <p class="text-sm text-gray-400">
+              Anyone passionate about making a difference
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      Contact
+    ======================== -->
+    <section
+      class="contact-section py-20 bg-gradient-to-r from-purple-900/20 to-indigo-900/20"
+      id="contact"
+    >
+      <div
+        class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/90 via-transparent to-black z-0"
+      ></div>
+      <div class="container mx-auto w-5/6 relative z-1">
+        <div class="text-center mb-16">
+          <!-- <h2 class="text-4xl font-bold font-display gradient-text mb-6">
+            Get In Touch
+          </h2> -->
+          <h2 class="text-4xl font-bold font-display mb-6">
+            Get In <span class="text-indigo-500">Touch</span>
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Have questions or ideas? We'd love to hear from you, let's connect
+            and collaborate.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16">
+          <div class="space-y-8">
+            <div class="contact-info-card">
+              <div class="contact-icon">
+                <i class="bx bx-map text-2xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-2">Our Locations</h4>
+                <div class="space-y-3">
+                  <div class="flex items-start gap-3">
+                    <i
+                      class="bx bx-current-location text-purple-400 text-lg mt-1"
+                    ></i>
+                    <div>
+                      <p class="text-indigo-50 font-semibold">Jimbaran, Bali</p>
+                      <p class="text-gray-400 text-sm">
+                        Jl. Raya Kampus Unud, Jimbaran, Bali - 80361
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <i
+                      class="bx bx-current-location text-indigo-400 text-lg mt-1"
+                    ></i>
+                    <div>
+                      <p class="text-indigo-50 font-semibold">
+                        Pakuwon City, Surabaya
+                      </p>
+                      <p class="text-gray-400 text-sm">
+                        Pakuwon Pusat Indah, Mulyorejo, SBY - 60112
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon">
+                <i class="bx bx-envelope text-2xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-2">Email Us</h4>
+                <a
+                  href="mailto:neurolinked@gmail.com"
+                  class="text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  neurolinked@gmail.com
+                </a>
+                <p class="text-gray-400 text-sm mt-1">
+                  We'll respond within 24 hours
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon">
+                <i class="bx bx-phone text-2xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-2">Call Us</h4>
+                <a
+                  href="tel:+6512345678"
+                  class="text-indigo-400 hover:text-indigo-300 transition-colors"
+                >
+                  +65 123-456-789
+                </a>
+                <p class="text-gray-400 text-sm mt-1">
+                  Available 24/7 for support
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon">
+                <i class="bx bx-time text-2xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg mb-2">Office Hours</h4>
+                <p class="text-gray-300">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <p class="text-gray-400 text-sm">
+                  Weekend support available online
+                </p>
+              </div>
+            </div>
+
+            <div class="social-media-section">
+              <h4 class="font-bold text-lg mb-4">Follow Us</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="social-link">
+                  <i class="bx bxl-facebook text-xl"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="bx bxl-twitter text-xl"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="bx bxl-linkedin text-xl"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="bx bxl-instagram text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-container">
+            <form id="contactForm" class="contact-form">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="form-group">
+                  <label for="name" class="form-label">Name *</label>
+                  <input type="text" id="name" name="name" class="form-input" />
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">Email Address *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject *</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="form-input"
+                />
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  class="form-input resize-none"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn-primary w-full">
+                <i class="bx bx-send mr-2"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="map-section mt-16">
+          <h3 class="text-2xl font-bold font-display text-center mb-8">
+            Find Us
+          </h3>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.2396351262944!2d115.16785931478394!3d-8.798321893647896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd244c13ee9d753%3A0x6c05042449b50f81!2sUniversitas%20Udayana!5e0!3m2!1sen!2sid!4v1642678901234!5m2!1sen!2sid"
+              width="100%"
+              height="400"
+              style="border: 0; border-radius: 1rem"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      button to top
+    ======================== -->
+    <button
+      id="scrollToTop"
+      class="fixed bottom-8 right-8 w-14 h-14 bg-[#0F172A] border border-indigo-500 text-indigo-400 hover:bg-gradient-to-br hover:from-indigo-600 hover:via-purple-700 hover:to-pink-500 hover:text-white hover:border-transparent rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-500 transform opacity-0 invisible scale-90 z-50"
+    >
+      <i class="bx bx-up-arrow-alt text-2xl"></i>
+    </button>
+
+    <!-- =======================
+      Footer
+    ======================== -->
+    <footer class="mt-[4rem]">
+      <div class="py-16 sm:mt-0 mx-auto w-5/6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div class="lg:col-span-2">
+            <div class="flex items-center mb-6">
+              <img
+                src="./assets/img/logo.png"
+                alt="NeuroLinked Logo"
+                class="w-12 h-12 mr-3"
+              />
+              <h3
+                class="text-2xl font-display font-bold bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+              >
+                NEUROLINKED
+              </h3>
+            </div>
+            <p class="text-gray-300 text-base md:text-lg mb-6 max-w-md">
+              NeuroLinked is the premier platform connecting visionary
+              innovators with groundbreaking projects. Discover, collaborate,
+              and build the future, together.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-indigo-500/20 hover:bg-indigo-500 text-indigo-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <i class="bx bxl-facebook text-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-purple-500/20 hover:bg-purple-500 text-purple-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <i class="bx bxl-twitter text-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-pink-500/20 hover:bg-pink-500 text-pink-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <i class="bx bxl-linkedin text-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-indigo-500/20 hover:bg-indigo-500 text-indigo-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
+              >
+                <i class="bx bxl-instagram text-lg"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold text-lg mb-6">Pages</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-300 hover:text-indigo-400 transition-colors duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="explore_aspirations.html"
+                  class="text-gray-300 hover:text-pink-400 transition-colors duration-300"
+                  >Explore Aspirations</a
+                >
+              </li>
+              <li>
+                <a
+                  href="write_aspiration.html"
+                  class="text-gray-300 hover:text-indigo-400 transition-colors duration-300"
+                  >Write Aspiration</a
+                >
+              </li>
+              <li>
+                <a
+                  href="explore_project.html"
+                  class="text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                  >Explore Project</a
+                >
+              </li>
+              <li>
+                <a
+                  href="createproject.html"
+                  class="text-gray-300 hover:text-pink-400 transition-colors duration-300"
+                  >Create Project</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold text-lg mb-6 tracking-wide">
+              Contact Us
+            </h4>
+            <ul class="space-y-3">
+              <li class="mb-2">
+                <p class="text-base text-gray-300">
+                  Have questions or ideas? We'd love to hear from you — let's
+                  connect and collaborate.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  class="bx bx-envelope text-indigo-400 text-xl drop-shadow-glow"
+                ></i>
+                <a
+                  href="#"
+                  class="text-base text-gray-300 hover:text-indigo-400 transition-colors duration-300"
+                >
+                  neurolinked@gmail.com
+                </a>
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  class="bx bx-phone-call text-purple-400 text-xl drop-shadow-glow"
+                ></i>
+                <a
+                  href="#"
+                  class="text-base text-gray-300 hover:text-purple-400 transition-colors duration-300"
+                >
+                  +65 123-456-789
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-indigo-500/20 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2025 NEUROLINKED. All rights reserved. Built with
+              <i class="bx bxs-heart text-red-500 text-md"></i>
+              for innovators worldwide.
+            </p>
+            <div class="flex items-center space-x-6">
+              <span class="text-gray-400 text-sm">Made with</span>
+              <div class="flex items-center space-x-2">
+                <div
+                  class="w-3 h-3 bg-indigo-500 rounded-full animate-pulse"
+                ></div>
+                <div
+                  class="w-3 h-3 bg-purple-500 rounded-full animate-pulse"
+                  style="animation-delay: 0.2s"
+                ></div>
+                <div
+                  class="w-3 h-3 bg-pink-500 rounded-full animate-pulse"
+                  style="animation-delay: 0.4s"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/about.js"></script>
+    <script src="./assets/js/totop.js"></script>
+    <script src="./assets/js/load.js"></script>
+  </body>
+</html>

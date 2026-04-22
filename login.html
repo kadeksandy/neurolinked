@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - NeuroLinked</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo.png" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"/>
+  </head>
+  <body style="background-image: url('./assets/img/login.jpg');background-size: cover;background-position: center;background-repeat: no-repeat;background-attachment: fixed;">
+    <section class="body">
+      <div class="containerr">
+        <div class="form-box login">
+          <form action="#">
+            <h1>Login</h1>
+            <div class="input-box">
+              <input type="text" placeholder="Username" required />
+              <i class="bx bxs-user"></i>
+            </div>
+            <div class="input-box">
+              <input type="password" placeholder="Password" required />
+              <i class="bx bxs-lock-alt"></i>
+            </div>
+            <div class="forgot-link">
+              <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn"><p>Login</p></button>
+            <p>Or login with</p>
+            <div class="social-icons">
+              <a href="#"><i class="bx bxl-google"></i></a>
+              <a href="#"><i class="bx bxl-facebook"></i></a>
+              <a href="#"><i class="bx bxl-instagram"></i></a>
+              <a href="#"><i class="bx bxl-apple"></i></a>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-box register">
+          <form action="#">
+            <h1>Registration</h1>
+            <div class="input-box">
+              <input type="text" placeholder="Username" required />
+              <i class="bx bxs-user"></i>
+            </div>
+            <div class="input-box">
+              <input type="email" placeholder="Email" required />
+              <i class="bx bxs-envelope"></i>
+            </div>
+            <div class="input-box">
+              <input type="password" placeholder="Password" required />
+              <i class="bx bxs-lock-alt"></i>
+            </div>
+            <button type="submit" class="btn">Register</button>
+            <p>Or register with</p>
+            <div class="social-icons">
+              <a href="#"><i class="bx bxl-google"></i></a>
+              <a href="#"><i class="bx bxl-facebook"></i></a>
+              <a href="#"><i class="bx bxl-instagram"></i></a>
+              <a href="#"><i class="bx bxl-apple"></i></a>
+            </div>
+          </form>
+        </div>
+
+        <div class="toggle-box">
+          <div class="toggle-panel toggle-left">
+            <h1>Hello, Welcome!</h1>
+            <p>Don't have an account?</p>
+            <button class="btn register-btn" style="margin-bottom: 10px">
+              Register
+            </button>
+            <button class="btn">
+              <a href="index.html" style="color: white">Back to Home</a>
+            </button>
+          </div>
+
+          <div class="toggle-panel toggle-right">
+            <h1>Welcome Back!</h1>
+            <p>Already have an account?</p>
+            <button class="btn login-btn" style="margin-bottom: 10px">
+              Login
+            </button>
+            <button class="btn">
+              <a href="index.html" style="color: white">Back to Home</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const containerr = document.querySelector(".containerr");
+      const registerBtn = document.querySelector(".register-btn");
+      const loginBtn = document.querySelector(".login-btn");
+
+      registerBtn.addEventListener("click", () => {
+        containerr.classList.add("active");
+      });
+
+      loginBtn.addEventListener("click", () => {
+        containerr.classList.remove("active");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - NeuroLinked</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo.png" />
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+    <!-- swiper js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- css -->
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link href="./assets/css/load.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- =======================
+      preloader
+    ======================== -->
+    <div id="preloader" class="fixed inset-0 z-[9999999999999999] bg-black flex items-center justify-center">
+      <canvas id="networkCanvas" class="absolute inset-0 w-full h-full z-0"></canvas>
+      <div class="relative z-10 flex flex-col items-center gap-4">
+        <div class="neuro-spinner"></div>
+        <p class="text-white text-sm tracking-widest opacity-50 font-mono">
+          Loading
+        </p>
+      </div>
+    </div>
+
+    <!-- =======================
+      Header
+    ======================== -->
+    <header class="header" id="header">
+      <!-- desktop navigation -->
+      <nav class="nav-dekstop container mx-auto w-5/6">
+        <div class="nav-menu left">
+          <ul class="nav__list">
+            <li>
+              <a href="index.html" class="nav__link link">
+                <i class="bx bxs-home"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="dropdown__item">
+              <div class="nav__link">
+                Explore
+                <i class="bx bx-chevron-down dropdown__arrow"></i>
+              </div>
+              <ul class="dropdown__menu">
+                <li>
+                  <a href="explore_aspirations.html" class="dropdown__link">
+                    <i class="bx bx-compass"></i> Explore Aspirations
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <a href="write_aspiration.html" class="dropdown__link">
+                    <i class="bx bx-edit-alt"></i> Write Aspiration
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <a href="explore_project.html" class="dropdown__link">
+                    <i class="bx bx-folder-open"></i> Explore Projects
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="createproject.html" class="nav__link link">
+                <i class="bx bx-plus-circle"></i>
+                <span>Create Project</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav__data">
+          <a href="index.html" class="nav__logo">
+            <img
+              src="./assets/img/logo.png"
+              alt=""
+              style="width: 50px; height: 50px"
+            />
+            <h1
+              class="text-indigo-500 text-2xl font-bold bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+            >
+              NEUROLINKED
+            </h1>
+          </a>
+        </div>
+        <div class="nav-menu right">
+          <ul class="nav__list">
+            <li>
+              <a href="about.html" class="nav__link link">
+                <i class="bx bx-info-circle"></i>
+                <span>About</span>
+              </a>
+            </li>
+            <li>
+              <a href="login.html" class="nav__link link">
+                <i class="bx bx-log-in"></i>
+                <span>Sign In</span>
+              </a>
+            </li>
+            <div>
+              <a href="write_aspiration.html" class="nav__linkk">
+                <span class="btv"
+                  ><i class="bx bx-edit-alt wa"></i>Share Your Vision</span
+                >
+              </a>
+            </div>
+          </ul>
+        </div>
+      </nav>
+      <!-- mobile navigation -->
+      <nav class="nav-mobile container">
+        <div class="nav__data mx-auto w-5/6">
+          <a href="index.html" class="nav__logo logo_mobile">
+            <img
+              src="./assets/img/logo.png"
+              alt=""
+              style="width: 50px; height: 50px"
+            />
+            <h1
+              class="text-indigo-500 text-1xl font-bold bg-gradient-to-r from-indigo-400 via-indigo-500 to-indigo-600 bg-clip-text text-transparent"
+            >
+              NEUROLINKED
+            </h1>
+          </a>
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="bx bx-menu nav__burger"></i>
+            <i class="bx bx-x nav__close"></i>
+          </div>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li>
+              <a href="index.html" class="nav__link link">
+                <i class="bx bxs-home"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="dropdown__item">
+              <div class="nav__link">
+                Explore
+                <i class="bx bx-chevron-down dropdown__arrow"></i>
+              </div>
+              <ul class="dropdown__menu">
+                <li>
+                  <a href="explore_aspirations.html" class="dropdown__link">
+                    <i class="bx bx-compass"></i> Explore Aspirations
+                  </a>
+                </li>
+                <li>
+                  <a href="write_aspiration.html" class="dropdown__link">
+                    <i class="bx bx-edit-alt"></i> Write Aspiration
+                  </a>
+                </li>
+                <li>
+                  <a href="explore_project.html" class="dropdown__link">
+                    <i class="bx bx-folder-open"></i> Explore Projects
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="createproject.html" class="nav__link link">
+                <i class="bx bx-plus-circle"></i>
+                <span>Create Project</span>
+              </a>
+            </li>
+            <li>
+              <a href="about.html" class="nav__link link">
+                <i class="bx bx-info-circle"></i>
+                <span>About</span>
+              </a>
+            </li>
+            <li>
+              <a href="login.html" class="nav__link link">
+                <i class="bx bx-log-in"></i>
+                <span>Sign In</span>
+              </a>
+            </li>
+            <div>
+              <a href="write_aspiration.html" class="nav__linkk">
+                <span class="btv"
+                  ><i class="bx bx-edit-alt wa"></i>Share Your Vision</span
+                >
+              </a>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- =======================
+      hero section
+    ======================== -->
+    <section
+      class="hero-container h-screen bg-cover bg-center relative"
+      style="background-image: url('./assets/img/bg1.jpg')"
+    >
+      <div class="absolute inset-0 bg-black/60 z-0"></div>
+      <div class="floating-circle circle-ai">
+        <div class="circle-gradient"></div>
+        <img src="./assets/img/ai.jpeg" alt="" />
+        <div class="label">AI & Tech</div>
+      </div>
+
+      <div class="floating-circle circle-health">
+        <div class="circle-gradient"></div>
+        <img src="./assets/img/healthcare.jpeg" alt="" />
+        <div class="label">Healthcare</div>
+      </div>
+
+      <div class="floating-circle circle-edu">
+        <div class="circle-gradient"></div>
+        <img src="./assets/img/education.jpeg" alt="" />
+        <div class="label">Education</div>
+      </div>
+
+      <div class="floating-circle circle-env">
+        <div class="circle-gradient"></div>
+        <img src="./assets/img/art.jpeg" alt="" />
+        <div class="label">Art & Music</div>
+      </div>
+
+      <div class="floating-circle circle-tech">
+        <div class="circle-gradient"></div>
+        <img src="./assets/img/startup.jpeg" alt="" />
+        <div class="label">Startups</div>
+      </div>
+
+      <div class="floating-circle circle-social">
+        <div class="circle-gradient"></div>
+        <img src="./assets/img/social.jpeg" alt="" />
+        <div class="label">Social Impact</div>
+      </div>
+
+      <div
+        class="hero-content sm:mt-10 flex justify-center items-center sm:block"
+      >
+        <div class="max-w-4xl mx-auto">
+          <div class="hero-badge">#1 innovation collaboration platform</div>
+
+          <h1 class="hero-title">
+            Successful<br />
+            Innovators<br />
+            Start Here
+          </h1>
+
+          <a
+            href="createproject.html"
+            class="inline-flex items-center justify-center bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25"
+          >
+            Start Your Journey
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      stats section
+    ======================== -->
+    <section class="stats-section">
+      <div class="max-w-7xl mx-auto w-5/6 px-1 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="stat-item">
+            <span
+              class="stat-number counter"
+              data-target="12847"
+              id="total-users"
+              >0</span
+            >
+            <div class="stat-label .font-body">Active Innovators</div>
+          </div>
+          <div class="stat-item">
+            <span
+              class="stat-number counter"
+              data-target="3421"
+              id="total-aspirations"
+              >0</span
+            >
+            <div class="stat-label .font-body">Ideas Shared</div>
+          </div>
+          <div class="stat-item">
+            <span
+              class="stat-number counter"
+              data-target="892"
+              id="active-projects"
+              >0</span
+            >
+            <div class="stat-label .font-body">Active Projects</div>
+          </div>
+          <div class="stat-item">
+            <span
+              class="stat-number counter"
+              data-target="1567"
+              id="successful-collaborations"
+              >0</span
+            >
+            <div class="stat-label .font-body">Successful Collaborations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      how it works section
+    ======================== -->
+    <section
+      class="how-it-works-section mx-auto h-auto bg-cover bg-center relative"
+      style="background-image: url('./assets/img/bg2.jpg')"
+    >
+      <div
+        class="absolute inset-0 z-0"
+        style="
+          background: linear-gradient(
+            to bottom,
+            rgb(0, 0, 0),
+            transparent 60%,
+            rgb(0, 0, 0)
+          );
+        "
+      ></div>
+      <div
+        class="relative mx-auto w-5/6 sm:mt-[8rem] mt-0 sm:mb-[8rem] mb-0 z-10"
+      >
+        <div class="text-center mb-10 sm:mb-20">
+          <h1
+            class="section-title text-2xl md:text-3xl font-display font-bold text-white lg:w-1/2 md:w-3/4 mx-auto"
+          >
+            Collaboration on NEUROLINKED is Easy, Empowering, and Inspiring.
+          </h1>
+        </div>
+
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="flex-1 max-w-lg">
+            <div class="mockup-container">
+              <div class="step-visual active" data-step="1">
+                <div class="mockup-frame rounded-2xl">
+                  <img src="./assets/img/11.png" alt="" class="mockup-image" />
+                </div>
+              </div>
+
+              <div class="step-visual" data-step="2">
+                <div class="mockup-frame rounded-2xl">
+                  <img src="./assets/img/12.png" alt="" class="mockup-image" />
+                </div>
+              </div>
+
+              <div class="step-visual" data-step="3">
+                <div class="mockup-frame rounded-2xl">
+                  <img src="./assets/img/13.png" alt="" class="mockup-image" />
+                </div>
+              </div>
+            </div>
+
+            <div class="progress-container">
+              <div class="progress-lines">
+                <div class="progress-line active" data-step="1"></div>
+                <div class="progress-line" data-step="2"></div>
+                <div class="progress-line" data-step="3"></div>
+              </div>
+              <div class="progress-timer-bar">
+                <div class="timer-fill" id="timer-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex-1">
+            <div class="steps-container">
+              <div class="step-item active" data-step="1">
+                <div class="step-number" data-step="1">1</div>
+                <div class="step-content">
+                  <h3
+                    class="step-title text-justify text-lg md:text-xl font-bold mb-2"
+                  >
+                    Share your aspiration
+                  </h3>
+                  <p
+                    class="step-description text-justify text-base md:text-lg font-body"
+                  >
+                    Write your idea through our intuitive aspiration form. Just
+                    describe your vision, pick a category, and submit — it only
+                    takes a minute.
+                  </p>
+                  <p class="step-tagline text-justify">
+                    Start with your thoughts. Your next big impact begins here.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step-item" data-step="2">
+                <div class="step-number" data-step="2">2</div>
+                <div class="step-content">
+                  <h3
+                    class="step-title text-justify text-lg md:text-xl font-bold mb-2"
+                  >
+                    Match with like-minded innovators
+                  </h3>
+                  <p
+                    class="step-description text-justify text-base md:text-lg font-body"
+                  >
+                    Our AI matcher helps you discover others with similar goals
+                    or complementary skills. See who's aligned, then connect
+                    instantly.
+                  </p>
+                  <p class="step-tagline text-justify">
+                    You don't have to do it alone. Find your people, find your
+                    purpose.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step-item" data-step="3">
+                <div class="step-number" data-step="3">3</div>
+                <div class="step-content">
+                  <h3
+                    class="step-title text-justify text-lg md:text-xl font-bold mb-2"
+                  >
+                    Collaborate & build together
+                  </h3>
+                  <p
+                    class="step-description text-justify text-base md:text-lg font-body"
+                  >
+                    Launch a project, invite collaborators, and track your
+                    journey — all inside NEUROLINKED. Turn your shared
+                    aspiration into action.
+                  </p>
+                  <p class="step-tagline text-justify">
+                    From spark to solution — we've got the tools to get you
+                    there.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      featured aspirations
+    ======================== -->
+    <section
+      class="h-auto bg-cover bg-center relative"
+      style="background-image: url('./assets/img/bg1.jpg')"
+    >
+      <div
+        class="absolute inset-0 z-0"
+        style="
+          background: linear-gradient(
+            to bottom,
+            rgb(0, 0, 0),
+            transparent 60%,
+            rgb(0, 0, 0)
+          );
+        "
+      ></div>
+
+      <section class="mx-auto w-5/6 relative z-10 sm:mb-[8rem] mb-0">
+        <div
+          class="flex flex-col lg:flex-row gap-8 items-center lg:items-start justify-center lg:justify-between"
+        >
+          <div
+            class="kiri text-white text-center lg:text-left mb-2 lg:mb-0 mt-0 lg:mt-5"
+          >
+            <h1
+              class="atas text-2xl md:text-3xl font-display font-bold text-white"
+            >
+              Featured Aspirations
+            </h1>
+            <p
+              class="atas mt-4 text-gray-300 mt-3 text-base md:text-lg max-w-3xl font-body"
+            >
+              Discover fresh ideas from the NEUROLINKED community — selected for
+              their impact, innovation, and potential to shape the future.
+            </p>
+            <a
+              href="explore_aspirations.html"
+              class="inline-flex items-center text-indigo-400 hover:text-indigo-500 font-medium text-base group mb-5 mt-2"
+            >
+              Explore More Aspirations
+              <i
+                class="bx bx-right-arrow-alt ml-2 transition-transform group-hover:translate-x-1"
+              ></i>
+            </a>
+            <div
+              class="featured-buttons flex justify-center lg:justify-start gap-4 mt-4"
+            >
+              <div
+                class="swiper-button-prev cursor-pointer text-2xl hover:text-indigo-500 border-b-2 border-indigo-900 transition"
+              >
+                <i class="bx bx-left-arrow-alt"></i>
+              </div>
+              <div
+                class="swiper-button-next cursor-pointer text-2xl hover:text-indigo-500 border-b-2 border-indigo-900 transition"
+              >
+                <i class="bx bx-right-arrow-alt"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="kanan sliderr w-full lg:w-2/3">
+            <div class="swiper mySwiper">
+              <div class="swiper- campaignSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide flex justify-center p-4">
+                    <div
+                      class="border-2 border-indigo-900 bg-black rounded-2xl shadow-md max-w-sm w-full overflow-hidden"
+                    >
+                      <div
+                        class="overflow-hidden h-48 w-full border-b-2 border-indigo-900 rounded-t-2xl"
+                      >
+                        <img
+                          src="./assets/img/fa1.jpeg"
+                          class="h-full w-full object-cover transition-transform duration-300 transform hover:scale-110"
+                        />
+                      </div>
+                      <div class="p-5 space-y-3">
+                        <h2 class="text-white text-xl font-body font-bold line-clamp-1">
+                          AI for Mental Health Care
+                        </h2>
+                        <p class="text-gray-400 text-sm line-clamp-2">
+                          Leveraging AI to provide early mental health
+                          screenings and emotional support.
+                        </p>
+                        <div
+                          class="border-t border-indigo-500/20 mt-4 pt-3 flex justify-end items-end"
+                        >
+                          <a
+                            href="aspirations_detail.html"
+                            class="inline-flex items-center text-indigo-400 hover:text-indigo-500 font-medium text-base group"
+                          >
+                            View Idea
+                            <i
+                              class="bx bx-right-arrow-alt ml-2 transition-transform group-hover:translate-x-1"
+                            ></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide flex justify-center p-4">
+                    <div
+                      class="border-2 border-indigo-900 bg-black rounded-2xl shadow-md max-w-sm w-full overflow-hidden"
+                    >
+                      <div
+                        class="overflow-hidden h-48 w-full border-b-2 border-indigo-900 rounded-t-2xl"
+                      >
+                        <img
+                          src="./assets/img/fa2.jpg"
+                          class="h-full w-full object-cover transition-transform duration-300 transform hover:scale-110"
+                        />
+                      </div>
+                      <div class="p-5 space-y-3">
+                        <h2
+                          class="text-white text-xl font-body font-bold line-clamp-1"
+                        >
+                          Green Campus Innovation Initiative
+                        </h2>
+                        <p class="text-gray-400 text-sm line-clamp-2">
+                          Student-led projects promoting zero-waste and
+                          community sustainability.
+                        </p>
+                        <div
+                          class="border-t border-indigo-500/20 mt-4 pt-3 flex justify-end items-end"
+                        >
+                          <a
+                            href="aspirations-detail.html"
+                            class="inline-flex items-center text-indigo-400 hover:text-indigo-500 font-medium text-base group"
+                          >
+                            View Idea
+                            <i
+                              class="bx bx-right-arrow-alt ml-2 transition-transform group-hover:translate-x-1"
+                            ></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide flex justify-center p-4">
+                    <div
+                      class="border-2 border-indigo-900 bg-black rounded-2xl shadow-md max-w-sm w-full overflow-hidden"
+                    >
+                      <div
+                        class="overflow-hidden h-48 w-full border-b-2 border-indigo-900 rounded-t-2xl"
+                      >
+                        <img
+                          src="./assets/img/fa3.jpg"
+                          class="h-full w-full object-cover transition-transform duration-300 transform hover:scale-110"
+                        />
+                      </div>
+                      <div class="p-5 space-y-3">
+                        <h2
+                          class="text-white text-xl font-body font-bold line-clamp-1"
+                        >
+                          VR for Disability Inclusion
+                        </h2>
+                        <p class="text-gray-400 text-sm line-clamp-2">
+                          Designing immersive learning experiences for students
+                          with special needs.
+                        </p>
+                        <div
+                          class="border-t border-indigo-500/20 mt-4 pt-3 flex justify-end items-end"
+                        >
+                          <a
+                            href="aspirations_detail.html"
+                            class="inline-flex items-center text-indigo-400 hover:text-indigo-500 font-medium text-base group"
+                          >
+                            View Idea
+                            <i
+                              class="bx bx-right-arrow-alt ml-2 transition-transform group-hover:translate-x-1"
+                            ></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide flex justify-center p-4">
+                    <div
+                      class="border-2 border-indigo-900 bg-black rounded-2xl shadow-md max-w-sm w-full overflow-hidden"
+                    >
+                      <div
+                        class="overflow-hidden h-48 w-full border-b-2 border-indigo-900 rounded-t-2xl"
+                      >
+                        <img
+                          src="./assets/img/fa4.jpg"
+                          class="h-full w-full object-cover transition-transform duration-300 transform hover:scale-110"
+                        />
+                      </div>
+                      <div class="p-5 space-y-3">
+                        <h2
+                          class="text-white text-xl font-body font-bold line-clamp-1"
+                        >
+                          Local Artisan Marketplace
+                        </h2>
+                        <p class="text-gray-400 text-sm line-clamp-2">
+                          Empowering traditional creators to reach global
+                          audiences via digital platforms.
+                        </p>
+                        <div
+                          class="border-t border-indigo-500/20 mt-4 pt-3 flex justify-end items-end"
+                        >
+                          <a
+                            href="aspirations_detail.html"
+                            class="inline-flex items-center text-indigo-400 hover:text-indigo-500 font-medium text-base group"
+                          >
+                            View Idea
+                            <i
+                              class="bx bx-right-arrow-alt ml-2 transition-transform group-hover:translate-x-1"
+                            ></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide flex justify-center p-4">
+                    <div
+                      class="border-2 border-indigo-900 bg-black rounded-2xl shadow-md max-w-sm w-full overflow-hidden"
+                    >
+                      <div
+                        class="overflow-hidden h-48 w-full border-b-2 border-indigo-900 rounded-t-2xl"
+                      >
+                        <img
+                          src="./assets/img/fa5.png"
+                          class="h-full w-full object-cover transition-transform duration-300 transform hover:scale-110"
+                        />
+                      </div>
+                      <div class="p-5 space-y-3">
+                        <h2
+                          class="text-white text-xl font-body font-bold line-clamp-1"
+                        >
+                          Clean Energy Microgrids
+                        </h2>
+                        <p class="text-gray-400 text-sm line-clamp-2">
+                          Prototype student-designed microgrids using solar
+                          power and battery storage.
+                        </p>
+                        <div
+                          class="border-t border-indigo-500/20 mt-4 pt-3 flex justify-end items-end"
+                        >
+                          <a
+                            href="aspirations_detail.html"
+                            class="inline-flex items-center text-indigo-400 hover:text-indigo-500 font-medium text-base group"
+                          >
+                            View Idea
+                            <i
+                              class="bx bx-right-arrow-alt ml-2 transition-transform group-hover:translate-x-1"
+                            ></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- =======================
+      featured projects
+    ======================== -->
+    <section
+      class="h-auto bg-cover bg-center relative"
+      style="background-image: url('./assets/img/bg4.png')"
+    >
+      <div
+        class="absolute inset-0 z-0"
+        style="
+          background: linear-gradient(
+            to bottom,
+            rgb(0, 0, 0),
+            transparent 50%,
+            rgba(0, 0, 0, 0.8)
+          );
+        "
+      ></div>
+
+      <section
+        class="relative z-10 w-5/6 mx-auto sm:mb-[8rem] mb-0 mt-[8rem] sm:mt-0"
+      >
+        <div class="text-center mb-5 sm:mb-10">
+          <h2
+            class="text-2xl md:text-3xl font-display font-bold text-white drop-shadow"
+          >
+            Featured Projects
+          </h2>
+          <p class="text-gray-300 mt-3 text-base md:text-lg max-w-3xl mx-auto">
+            Discover promising innovations driven by real changemakers. These
+            top projects showcase collaboration, tech, and real-world impact.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6">
+          <div
+            class="fp relative rounded-2xl overflow-hidden border border-indigo-900 h-[260px] lg:h-[545px]"
+          >
+            <img
+              src="./assets/img/fp1.jpg"
+              alt="Main Project"
+              class="absolute inset-0 w-full h-full object-cover z-0"
+            />
+            <div
+              class="absolute bottom-0 left-0 w-full h-4/5 bg-gradient-to-t from-black/100 to-transparent z-10"
+            ></div>
+            <div class="relative z-20 h-full flex flex-col justify-end p-6">
+              <span class="text-indigo-400 text-xs uppercase font-medium"
+                >Healthcare</span
+              >
+              <h3
+                class="text-white text-xl lg:text-2xl font-body font-bold mt-1"
+              >
+                AI-Powered Diagnosis Platform
+              </h3>
+              <p class="text-gray-300 text-sm mt-1 line-clamp-4">
+                A groundbreaking platform designed to revolutionize access to
+                rural healthcare by integrating advanced machine learning into
+                diagnostic tools.
+              </p>
+              <div class="mt-5 flex justify-between items-center">
+                <span class="text-indigo-500 text-sm">62% Funded</span>
+                <a
+                  href="project_detail.html"
+                  class="inline-flex items-center text-indigo-400 hover:text-indigo-500 font-medium text-base group"
+                >
+                  View Project
+                  <i
+                    class="bx bx-right-arrow-alt ml-2 transition-transform group-hover:translate-x-1"
+                  ></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:col-span-2">
+            <div
+              class="fp relative rounded-2xl overflow-hidden border border-indigo-800 h-[260px]"
+            >
+              <img
+                src="./assets/img/fp2.jpg"
+                class="absolute inset-0 w-full h-full object-cover z-0"
+              />
+              <div
+                class="absolute bottom-0 left-0 w-full h-4/5 bg-gradient-to-t from-black/100 to-transparent z-10"
+              ></div>
+              <div class="relative z-20 p-4 flex flex-col justify-end h-full">
+                <h4 class="text-white text-lg font-bold font-body line-clamp-2">
+                  EcoTech Clean Water System
+                </h4>
+                <p class="text-gray-300 text-sm mt-1 line-clamp-3">
+                  Purifying drinking water in disaster-prone regions using
+                  compact solar-powered filtration modules.
+                </p>
+                <div class="mt-2 flex justify-between items-center">
+                  <span class="text-indigo-500 text-sm">82% Funded</span>
+                  <a
+                    href="project_detail.html"
+                    class="inline-flex items-center text-indigo-400 hover:text-indigo-500 font-medium text-base group"
+                  >
+                    Explore
+                    <i
+                      class="bx bx-right-arrow-alt ml-2 transition-transform group-hover:translate-x-1"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="fp relative rounded-2xl overflow-hidden border border-indigo-800 h-[260px]"
+            >
+              <img
+                src="./assets/img/fp3.jpg"
+                class="absolute inset-0 w-full h-full object-cover z-0"
+              />
+              <div
+                class="absolute bottom-0 left-0 w-full h-4/5 bg-gradient-to-t from-black/100 to-transparent z-10"
+              ></div>
+              <div class="relative z-20 p-4 flex flex-col justify-end h-full">
+                <h4 class="text-white text-lg font-bold font-body line-clamp-2">
+                  VR Empathy Simulator
+                </h4>
+                <p class="text-gray-300 text-sm mt-1 line-clamp-3">
+                  A VR tool to help users experience life through others'
+                  perspectives — building compassion.
+                </p>
+                <div class="mt-2 flex justify-between items-center">
+                  <span class="text-indigo-500 text-sm">47% Funded</span>
+                  <a
+                    href="project_detail.html"
+                    class="inline-flex items-center text-indigo-400 hover:text-indigo-500 font-medium text-base group"
+                  >
+                    Explore
+                    <i
+                      class="bx bx-right-arrow-alt ml-2 transition-transform group-hover:translate-x-1"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="fp relative rounded-2xl overflow-hidden border border-indigo-800 h-[260px]"
+            >
+              <img
+                src="./assets/img/fp4.jpg"
+                class="absolute inset-0 w-full h-full object-cover z-0"
+              />
+              <div
+                class="absolute bottom-0 left-0 w-full h-4/5 bg-gradient-to-t from-black/100 to-transparent z-10"
+              ></div>
+              <div class="relative z-20 p-4 flex flex-col justify-end h-full">
+                <h4 class="text-white text-lg font-bold font-body line-clamp-2">
+                  Youth Coding Bootcamp
+                </h4>
+                <p class="text-gray-300 text-sm mt-1 line-clamp-3">
+                  Weekend workshops for teens covering full-stack development
+                  and app building.
+                </p>
+                <div class="mt-2 flex justify-between items-center">
+                  <span class="text-indigo-500 text-sm">23% Funded</span>
+                  <a
+                    href="project_detail.html"
+                    class="inline-flex items-center text-indigo-400 hover:text-indigo-500 font-medium text-base group"
+                  >
+                    Explore
+                    <i
+                      class="bx bx-right-arrow-alt ml-2 transition-transform group-hover:translate-x-1"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="fp relative rounded-2xl overflow-hidden border border-indigo-800 h-[260px]"
+            >
+              <img
+                src="./assets/img/fp5.jpg"
+                class="absolute inset-0 w-full h-full object-cover z-0"
+              />
+              <div
+                class="absolute bottom-0 left-0 w-full h-4/5 bg-gradient-to-t from-black/100 to-transparent z-10"
+              ></div>
+              <div class="relative z-20 p-4 flex flex-col justify-end h-full">
+                <h4 class="text-white text-lg font-bold font-body line-clamp-2">
+                  Smart Farming with Drones
+                </h4>
+                <p class="text-gray-300 text-sm mt-1 line-clamp-3">
+                  Monitoring crop health using AI-powered drones for small-scale
+                  farming optimization.
+                </p>
+                <div class="mt-2 flex justify-between items-center">
+                  <span class="text-indigo-500 text-sm">68% Funded</span>
+                  <a
+                    href="project_detail.html"
+                    class="inline-flex items-center text-indigo-400 hover:text-indigo-500 font-medium text-base group"
+                  >
+                    Explore
+                    <i
+                      class="bx bx-right-arrow-alt ml-2 transition-transform group-hover:translate-x-1"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center mt-8">
+          <a
+            href="explore_project.html"
+            class="inline-flex items-center justify-center bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25"
+          >
+            Explore More Projects
+          </a>
+        </div>
+      </section>
+    </section>
+
+    <!-- =======================
+      create project cta section
+    ======================== -->
+    <section
+      class="h-auto bg-cover bg-center relative py-16"
+      style="background-image: url('./assets/img/bg5.png')"
+    >
+      <div
+        class="absolute inset-0 z-0"
+        style="
+          background: linear-gradient(
+            to bottom,
+            rgb(0, 0, 0),
+            transparent 50%,
+            rgba(0, 0, 0, 0.8)
+          );
+        "
+      ></div>
+
+      <div class="relative z-10 w-5/6 mx-auto sm:mb-[8rem] mb-0 mt-20 sm:mt-0">
+        <div
+          class="flex flex-col lg:flex-row-reverse items-center justify-between gap-12"
+        >
+          <!-- right -->
+          <div class="flex-1 text-center lg:text-left">
+            <div
+              class="inline-flex items-center bg-purple-500/20 text-purple-300 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-purple-500/30"
+            >
+              <i class="bx bx-rocket mr-2"></i>
+              Launch Your Vision
+            </div>
+
+            <h2
+              class="text-2xl md:text-3xl font-display font-bold text-white mb-6 leading-tight"
+            >
+              Turn Your
+              <span class="text-indigo-500">Big Idea</span>
+              Into Reality
+            </h2>
+
+            <p class="text-gray-300 text-base md:text-lg mb-8 text-justify">
+              Have a groundbreaking concept? Create your project on NEUROLINKED
+              and attract the perfect team to bring your vision to life. From
+              concept to completion, we've got you covered.
+            </p>
+
+            <div class="space-y-4 mb-8">
+              <div class="flex items-center gap-3 lg:justify-start">
+                <div
+                  class="w-6 h-6 bg-indigo-500 rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="bx bx-check text-white text-sm"></i>
+                </div>
+                <span class="text-gray-300 text-base md:text-lg text-justify"
+                  >Free project creation and management tools</span
+                >
+              </div>
+              <div class="flex items-center gap-3 lg:justify-start">
+                <div
+                  class="w-6 h-6 bg-indigo-500 rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="bx bx-check text-white text-sm"></i>
+                </div>
+                <span class="text-gray-300 text-base md:text-lg text-justify"
+                  >AI-powered team matching and recommendations</span
+                >
+              </div>
+              <div class="flex items-center gap-3 lg:justify-start">
+                <div
+                  class="w-6 h-6 bg-indigo-500 rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="bx bx-check text-white text-sm"></i>
+                </div>
+                <span class="text-gray-300 text-base md:text-lg text-justify"
+                  >Built-in collaboration and progress tracking</span
+                >
+              </div>
+            </div>
+
+            <div class="">
+              <a
+                href="createproject.html"
+                class="inline-flex items-center justify-center bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25"
+              >
+                <i class="bx bx-plus-circle mr-2 text-xl"></i>
+                Create Project
+              </a>
+            </div>
+          </div>
+
+          <!-- left -->
+          <div class="flex-1 max-w-lg">
+            <div class="relative">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 rounded-full blur-3xl"
+              ></div>
+
+              <div
+                class="absolute -top-6 sm:-right-6 -right-0 bg-gradient-to-br from-purple-500/30 to-indigo-600/30 backdrop-blur-sm border border-purple-500/40 rounded-2xl p-3 transform rotate-12 hover:rotate-[20deg] transition-transform duration-300"
+              >
+                <i class="bx bx-code-alt text-2xl text-purple-300"></i>
+              </div>
+
+              <div
+                class="absolute -bottom-6 sm:-left-6 -left-0 bg-gradient-to-br from-indigo-500/30 to-purple-600/30 backdrop-blur-sm border border-indigo-500/40 rounded-2xl p-3 transform -rotate-12 hover:-rotate-[20deg] transition-transform duration-300"
+              >
+                <i class="bx bx-bulb text-2xl text-indigo-300"></i>
+              </div>
+
+              <div
+                class="absolute top-1/2 sm:-right-8 -right-0 bg-gradient-to-br from-pink-500/30 to-purple-600/30 backdrop-blur-sm border border-pink-500/40 rounded-2xl p-3 transform rotate-45 hover:rotate-[60deg] transition-transform duration-300"
+              >
+                <i class="bx bx-rocket text-2xl text-pink-300"></i>
+              </div>
+
+              <div
+                class="relative bg-gradient-to-br from-gray-900/90 to-purple-900/50 backdrop-blur-lg border border-purple-500/30 rounded-3xl p-8 shadow-2xl"
+              >
+                <div class="text-center">
+                  <div
+                    class="w-24 h-24 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg"
+                  >
+                    <i class="bx bx-folder-plus text-4xl text-white"></i>
+                  </div>
+
+                  <h3 class="text-2xl font-bold text-white mb-4">
+                    Project Builder
+                  </h3>
+                  <p class="text-gray-300 mb-6">
+                    Everything you need to launch and manage your innovative
+                    project
+                  </p>
+
+                  <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div
+                      class="bg-indigo-500/20 rounded-xl p-3 border border-indigo-500/30"
+                    >
+                      <i class="bx bx-group text-2xl text-indigo-400 mb-2"></i>
+                      <div class="text-sm text-white font-semibold">
+                        Team Building
+                      </div>
+                    </div>
+                    <div
+                      class="bg-purple-500/20 rounded-xl p-3 border border-purple-500/30"
+                    >
+                      <i class="bx bx-chart text-2xl text-purple-400 mb-2"></i>
+                      <div class="text-sm text-white font-semibold">
+                        Progress Tracking
+                      </div>
+                    </div>
+                    <div
+                      class="bg-pink-500/20 rounded-xl p-3 border border-pink-500/30"
+                    >
+                      <i class="bx bx-chat text-2xl text-pink-400 mb-2"></i>
+                      <div class="text-sm text-white font-semibold">
+                        Team Chat
+                      </div>
+                    </div>
+                    <div
+                      class="bg-indigo-500/20 rounded-xl p-3 border border-indigo-500/30"
+                    >
+                      <i class="bx bx-trophy text-2xl text-indigo-400 mb-2"></i>
+                      <div class="text-sm text-white font-semibold">
+                        Success Metrics
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      faqs
+    ======================== -->
+    <section class="sm:mb-[8rem] mb-0 mt-[4rem] sm:mt-0" id="faq">
+      <div class="w-full">
+        <div class="container mx-auto w-5/6">
+          <div
+            class="flex flex-col lg:flex-row items-start lg:items-end justify-between w-full mb-8 sm:mb-10 lg:mb-12 gap-4 sm:gap-6 lg:gap-20"
+          >
+            <div class="w-full lg:w-1/2">
+              <h3
+                class="text-indigo-400 text-lg sm:text-xl tracking-wider mb-2"
+              >
+                FAQs
+              </h3>
+              <h1 class="text-2xl md:text-3xl font-bold text-white">
+                All You Need to Know About NEUROLINKED
+              </h1>
+            </div>
+
+            <div class="w-full lg:w-1/2 mt-4 lg:mt-0">
+              <p
+                class="text-gray-300 text-base md:text-lg text-justify sm:text-left"
+              >
+                We've gathered answers to help you better understand how to
+                share ideas, join projects, and explore innovation through our
+                AI-powered platform.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid gap-4 sm:gap-6 md:gap-8">
+            <!-- FAQ 1 -->
+            <div
+              class="grid pb-4 border-b-2 border-indigo-500/20 last:border-0"
+            >
+              <div class="flex justify-between items-center gap-3 sm:gap-4">
+                <h3
+                  class="text-white text-base md:text-lg lg:text-xl font-bold tracking-wider"
+                >
+                  What is NEUROLINKED and how does it work?
+                </h3>
+                <button
+                  class="faq-button bg-transparent border-indigo-500 border-2 sm:border-3 rounded-full flex-shrink-0"
+                  data-faq="1"
+                >
+                  <i
+                    class="bx bx-plus text-indigo-400 p-1 sm:p-2 lg:p-3 text-sm sm:text-base lg:text-xl"
+                  ></i>
+                </button>
+              </div>
+
+              <div
+                class="faq__answer answer-1 max-w-full sm:max-w-[95%] overflow-y-hidden max-h-0 transition-all duration-400"
+              >
+                <p
+                  class="text-gray-400 text-sm sm:text-base tracking-wider font-normal pt-3 pr-2"
+                >
+                  NEUROLINKED is a digital platform where individuals can submit
+                  aspirations, discover others with similar visions, and
+                  collaborate on future-driven projects using the power of AI.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div
+              class="grid pb-4 border-b-2 border-indigo-500/20 last:border-0"
+            >
+              <div class="flex justify-between items-center gap-3 sm:gap-4">
+                <h3
+                  class="text-white text-base md:text-lg lg:text-xl font-bold tracking-wider"
+                >
+                  How do I publish my idea or aspiration?
+                </h3>
+                <button
+                  class="faq-button bg-transparent border-indigo-500 border-2 sm:border-3 rounded-full flex-shrink-0"
+                  data-faq="2"
+                >
+                  <i
+                    class="bx bx-plus text-indigo-400 p-1 sm:p-2 lg:p-3 text-sm sm:text-base lg:text-xl"
+                  ></i>
+                </button>
+              </div>
+
+              <div
+                class="faq__answer answer-2 max-w-full sm:max-w-[95%] overflow-y-hidden max-h-0 transition-all duration-400"
+              >
+                <p
+                  class="text-gray-400 text-sm sm:text-base tracking-wider font-normal pt-3 pr-2"
+                >
+                  Just go to the “Write Aspiration” section, fill out your
+                  vision using our form, and submit. Our AI system may even help
+                  connect your idea with potential collaborators.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div
+              class="grid pb-4 border-b-2 border-indigo-500/20 last:border-0"
+            >
+              <div class="flex justify-between items-center gap-3 sm:gap-4">
+                <h3
+                  class="text-white text-base md:text-lg lg:text-xl font-bold tracking-wider"
+                >
+                  Is using NEUROLINKED free?
+                </h3>
+                <button
+                  class="faq-button bg-transparent border-indigo-500 border-2 sm:border-3 rounded-full flex-shrink-0"
+                  data-faq="3"
+                >
+                  <i
+                    class="bx bx-plus text-indigo-400 p-1 sm:p-2 lg:p-3 text-sm sm:text-base lg:text-xl"
+                  ></i>
+                </button>
+              </div>
+
+              <div
+                class="faq__answer answer-3 max-w-full sm:max-w-[95%] overflow-y-hidden max-h-0 transition-all duration-400"
+              >
+                <p
+                  class="text-gray-400 text-sm sm:text-base tracking-wider font-normal pt-3 pr-2"
+                >
+                  Yes! NEUROLINKED is free to use. Anyone can share aspirations,
+                  view projects, and connect with collaborators without any
+                  subscription.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div
+              class="grid pb-4 border-b-2 border-indigo-500/20 last:border-0"
+            >
+              <div class="flex justify-between items-center gap-3 sm:gap-4">
+                <h3
+                  class="text-white text-base md:text-lg lg:text-xl font-bold tracking-wider"
+                >
+                  Can I join a project even if I didn’t start it?
+                </h3>
+                <button
+                  class="faq-button bg-transparent border-indigo-500 border-2 sm:border-3 rounded-full flex-shrink-0"
+                  data-faq="4"
+                >
+                  <i
+                    class="bx bx-plus text-indigo-400 p-1 sm:p-2 lg:p-3 text-sm sm:text-base lg:text-xl"
+                  ></i>
+                </button>
+              </div>
+
+              <div
+                class="faq__answer answer-4 max-w-full sm:max-w-[95%] overflow-y-hidden max-h-0 transition-all duration-400"
+              >
+                <p
+                  class="text-gray-400 text-sm sm:text-base tracking-wider font-normal pt-3 pr-2"
+                >
+                  Absolutely. You can browse open projects or use our AI matcher
+                  to find initiatives that need your skills or align with your
+                  interests.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div
+              class="grid pb-4 border-b-2 border-indigo-500/20 last:border-0"
+            >
+              <div class="flex justify-between items-center gap-3 sm:gap-4">
+                <h3
+                  class="text-white text-base md:text-lg lg:text-xl font-bold tracking-wider"
+                >
+                  How is my data and idea protected?
+                </h3>
+                <button
+                  class="faq-button bg-transparent border-indigo-500 border-2 sm:border-3 rounded-full flex-shrink-0"
+                  data-faq="5"
+                >
+                  <i
+                    class="bx bx-plus text-indigo-400 p-1 sm:p-2 lg:p-3 text-sm sm:text-base lg:text-xl"
+                  ></i>
+                </button>
+              </div>
+
+              <div
+                class="faq__answer answer-5 max-w-full sm:max-w-[95%] overflow-y-hidden max-h-0 transition-all duration-400"
+              >
+                <p
+                  class="text-gray-400 text-sm sm:text-base tracking-wider font-normal pt-3 pr-2"
+                >
+                  All submissions and accounts are secured using encryption. We
+                  prioritize your privacy and never share your ideas without
+                  your permission.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      reviews
+    ======================== -->
+    <section class="mx-auto w-5/6 sm:mb-[8rem] mb-0 mt-[4rem] sm:mt-0">
+      <div
+        class="atas text-center flex flex-col items-center justify-center mb-8"
+      >
+        <h1
+          class="w-3/4 text-white sm:mt-0 mt-[70px] text-2xl md:text-3xl font-bold font-display"
+        >
+          What Our <span class="text-indigo-400">Users</span> Say
+        </h1>
+        <p
+          class="w-5/6 sm:w-3/4 text-white mt-4 text-base md:text-lg font-body"
+        >
+          Honest feedback from our EchoTech community.
+        </p>
+      </div>
+
+      <div
+        class="sliderrrr"
+        reverse="true"
+        style="--width: 300px; --height: 150px; --quantity: 7"
+      >
+        <div class="list">
+          <div class="items" style="--position: 1">
+            <div
+              class="max-w-md bg-black border-2 border-indigo-900 rounded-lg shadow-md p-5 space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <img
+                    src="./assets/img/prf1.jpg"
+                    alt=""
+                    style="max-width: 35px; border-radius: 50%"
+                  />
+                  <div>
+                    <p class="font-semibold text-gray-100">Bright</p>
+                    <p class="text-sm text-gray-400">18 APR 2023</p>
+                  </div>
+                </div>
+                <div class="flex space-x-1 text-yellow-400">
+                  <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bx-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm">
+                NEUROLINKED has a sleek interface and inspiring vision. Truly
+                futuristic!
+              </p>
+            </div>
+          </div>
+
+          <div class="items" style="--position: 2">
+            <div
+              class="max-w-md bg-black border-2 border-indigo-900 rounded-lg shadow-md p-5 space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <img
+                    src="./assets/img/prf2.jpg"
+                    alt=""
+                    style="max-width: 35px; border-radius: 50%"
+                  />
+                  <div>
+                    <p class="font-semibold text-gray-100">Jessica M.</p>
+                    <p class="text-sm text-gray-400">18 APR 2024</p>
+                  </div>
+                </div>
+                <div class="flex space-x-1 text-yellow-400">
+                  <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm">
+                Love the experience! Clean layout, smart flow, and helpful
+                tools.
+              </p>
+            </div>
+          </div>
+
+          <div class="items" style="--position: 3">
+            <div
+              class="max-w-md bg-black border-2 border-indigo-900 rounded-lg shadow-md p-5 space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <img
+                    src="./assets/img/prf3.jpg"
+                    alt=""
+                    style="max-width: 35px; border-radius: 50%"
+                  />
+                  <div>
+                    <p class="font-semibold text-gray-100">Daniel R.</p>
+                    <p class="text-sm text-gray-400">1 JAN 2025</p>
+                  </div>
+                </div>
+                <div class="flex space-x-1 text-yellow-400">
+                  <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bx-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm">
+                Matching ideas with projects has never been this seamless
+                before.
+              </p>
+            </div>
+          </div>
+
+          <div class="items" style="--position: 4">
+            <div
+              class="max-w-md bg-black border-2 border-indigo-900 rounded-lg shadow-md p-5 space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <img
+                    src="./assets/img/prf4.jpg"
+                    alt=""
+                    style="max-width: 35px; border-radius: 50%"
+                  />
+                  <div>
+                    <p class="font-semibold text-gray-100">Sophia L.</p>
+                    <p class="text-sm text-gray-400">1 MAY 2022</p>
+                  </div>
+                </div>
+                <div class="flex space-x-1 text-yellow-400">
+                  <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm">
+                Everything feels futuristic, but still easy to use. I love the
+                vibe!
+              </p>
+            </div>
+          </div>
+
+          <div class="items" style="--position: 5">
+            <div
+              class="max-w-md bg-black border-2 border-indigo-900 rounded-lg shadow-md p-5 space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <img
+                    src="./assets/img/prf5.jpg"
+                    alt=""
+                    style="max-width: 35px; border-radius: 50%"
+                  />
+                  <div>
+                    <p class="font-semibold text-gray-100">Marcus T.</p>
+                    <p class="text-sm text-gray-400">1 SEP 2024</p>
+                  </div>
+                </div>
+                <div class="flex space-x-1 text-yellow-400">
+                  <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bx-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm">
+                Clean layout, fast load time, and cool interactions. Very
+                satisfied.
+              </p>
+            </div>
+          </div>
+
+          <div class="items" style="--position: 6">
+            <div
+              class="max-w-md bg-black border-2 border-indigo-900 rounded-lg shadow-md p-5 space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <img
+                    src="./assets/img/prf6.jpg"
+                    alt=""
+                    style="max-width: 35px; border-radius: 50%"
+                  />
+                  <div>
+                    <p class="font-semibold text-gray-100">Olivia K.</p>
+                    <p class="text-sm text-gray-400">15 JUN 2023</p>
+                  </div>
+                </div>
+                <div class="flex space-x-1 text-yellow-400">
+                  <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm">
+                Really impressed with how user-friendly NEUROLINKED is. Great
+                work!
+              </p>
+            </div>
+          </div>
+
+          <div class="items" style="--position: 7">
+            <div
+              class="max-w-md bg-black border-2 border-indigo-900 rounded-lg shadow-md p-5 space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <img
+                    src="./assets/img/prf7.jpg"
+                    alt=""
+                    style="max-width: 35px; border-radius: 50%"
+                  />
+                  <div>
+                    <p class="font-semibold text-gray-100">Ethan C.</p>
+                    <p class="text-sm text-gray-400">18 APR 2025</p>
+                  </div>
+                </div>
+                <div class="flex space-x-1 text-yellow-400">
+                  <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bx-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm">
+                Beautiful animations and smart features. NEUROLINKED gets it
+                right.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="sliderrrr mt-5"
+        style="--width: 300px; --height: 150px; --quantity: 7"
+      >
+        <div class="list">
+          <div class="items" style="--position: 1">
+            <div
+              class="max-w-md bg-black border-2 border-indigo-900 rounded-lg shadow-md p-5 space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <img
+                    src="./assets/img/prf1.jpg"
+                    alt=""
+                    style="max-width: 35px; border-radius: 50%"
+                  />
+                  <div>
+                    <p class="font-semibold text-gray-100">Bright</p>
+                    <p class="text-sm text-gray-400">18 APR 2023</p>
+                  </div>
+                </div>
+                <div class="flex space-x-1 text-yellow-400">
+                  <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bx-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm">
+                NEUROLINKED has a sleek interface and inspiring vision. Truly
+                futuristic!
+              </p>
+            </div>
+          </div>
+
+          <div class="items" style="--position: 2">
+            <div
+              class="max-w-md bg-black border-2 border-indigo-900 rounded-lg shadow-md p-5 space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <img
+                    src="./assets/img/prf2.jpg"
+                    alt=""
+                    style="max-width: 35px; border-radius: 50%"
+                  />
+                  <div>
+                    <p class="font-semibold text-gray-100">Jessica M.</p>
+                    <p class="text-sm text-gray-400">18 APR 2024</p>
+                  </div>
+                </div>
+                <div class="flex space-x-1 text-yellow-400">
+                  <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm">
+                Love the experience! Clean layout, smart flow, and helpful
+                tools.
+              </p>
+            </div>
+          </div>
+
+          <div class="items" style="--position: 3">
+            <div
+              class="max-w-md bg-black border-2 border-indigo-900 rounded-lg shadow-md p-5 space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <img
+                    src="./assets/img/prf3.jpg"
+                    alt=""
+                    style="max-width: 35px; border-radius: 50%"
+                  />
+                  <div>
+                    <p class="font-semibold text-gray-100">Daniel R.</p>
+                    <p class="text-sm text-gray-400">1 JAN 2025</p>
+                  </div>
+                </div>
+                <div class="flex space-x-1 text-yellow-400">
+                  <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bx-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm">
+                Matching ideas with projects has never been this seamless
+                before.
+              </p>
+            </div>
+          </div>
+
+          <div class="items" style="--position: 4">
+            <div
+              class="max-w-md bg-black border-2 border-indigo-900 rounded-lg shadow-md p-5 space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <img
+                    src="./assets/img/prf4.jpg"
+                    alt=""
+                    style="max-width: 35px; border-radius: 50%"
+                  />
+                  <div>
+                    <p class="font-semibold text-gray-100">Sophia L.</p>
+                    <p class="text-sm text-gray-400">1 MAY 2022</p>
+                  </div>
+                </div>
+                <div class="flex space-x-1 text-yellow-400">
+                  <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm">
+                Everything feels futuristic, but still easy to use. I love the
+                vibe!
+              </p>
+            </div>
+          </div>
+
+          <div class="items" style="--position: 5">
+            <div
+              class="max-w-md bg-black border-2 border-indigo-900 rounded-lg shadow-md p-5 space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <img
+                    src="./assets/img/prf5.jpg"
+                    alt=""
+                    style="max-width: 35px; border-radius: 50%"
+                  />
+                  <div>
+                    <p class="font-semibold text-gray-100">Marcus T.</p>
+                    <p class="text-sm text-gray-400">1 SEP 2024</p>
+                  </div>
+                </div>
+                <div class="flex space-x-1 text-yellow-400">
+                  <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bx-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm">
+                Clean layout, fast load time, and cool interactions. Very
+                satisfied.
+              </p>
+            </div>
+          </div>
+
+          <div class="items" style="--position: 6">
+            <div
+              class="max-w-md bg-black border-2 border-indigo-900 rounded-lg shadow-md p-5 space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <img
+                    src="./assets/img/prf6.jpg"
+                    alt=""
+                    style="max-width: 35px; border-radius: 50%"
+                  />
+                  <div>
+                    <p class="font-semibold text-gray-100">Olivia K.</p>
+                    <p class="text-sm text-gray-400">15 JUN 2023</p>
+                  </div>
+                </div>
+                <div class="flex space-x-1 text-yellow-400">
+                  <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm">
+                Really impressed with how user-friendly NEUROLINKED is. Great
+                work!
+              </p>
+            </div>
+          </div>
+
+          <div class="items" style="--position: 7">
+            <div
+              class="max-w-md bg-black border-2 border-indigo-900 rounded-lg shadow-md p-5 space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <img
+                    src="./assets/img/prf7.jpg"
+                    alt=""
+                    style="max-width: 35px; border-radius: 50%"
+                  />
+                  <div>
+                    <p class="font-semibold text-gray-100">Ethan C.</p>
+                    <p class="text-sm text-gray-400">18 APR 2025</p>
+                  </div>
+                </div>
+                <div class="flex space-x-1 text-yellow-400">
+                  <i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bxs-star"></i><i class="bx bxs-star"></i
+                  ><i class="bx bx-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-300 text-sm">
+                Beautiful animations and smart features. NEUROLINKED gets it
+                right.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      cta about & write aspiration
+    ======================== -->
+    <section
+      class="h-auto bg-cover bg-center relative"
+      style="background-image: url('./assets/img/bg5.png')"
+    >
+      <div
+        class="absolute inset-0 z-0"
+        style="
+          background: linear-gradient(
+            to bottom,
+            rgb(0, 0, 0),
+            transparent 50%,
+            rgba(0, 0, 0, 0.8)
+          );
+        "
+      ></div>
+
+      <div
+        class="absolute top-20 left-10 w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-purple-500/30 animate-float"
+      >
+        <i class="bx bx-code-alt text-2xl text-purple-300"></i>
+      </div>
+      <div
+        class="absolute top-32 right-16 w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-indigo-500/30 animate-float-delayed"
+      >
+        <i class="bx bx-rocket text-lg text-indigo-300"></i>
+      </div>
+      <div
+        class="absolute bottom-32 left-20 w-14 h-14 bg-pink-500/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-pink-500/30 animate-float-slow"
+      >
+        <i class="bx bx-bulb text-xl text-pink-300"></i>
+      </div>
+      <div
+        class="absolute bottom-20 right-10 w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-purple-500/30 animate-float"
+      >
+        <i class="bx bx-play text-lg text-purple-300"></i>
+      </div>
+
+      <div
+        class="relative z-10 w-5/6 mx-auto flex items-center justify-center min-h-[60vh] sm:mb-[8rem] mb-0 mt-[4rem] sm:mt-0"
+      >
+        <div class="max-w-2xl mx-auto">
+          <div
+            class="bg-gradient-to-br from-gray-900/95 to-indigo-900/80 backdrop-blur-lg border border-indigo-500/30 rounded-3xl p-12 shadow-2xl text-center"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-purple-500 via-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg"
+            >
+              <i class="bx bx-edit-alt text-3xl text-white"></i>
+            </div>
+
+            <h2
+              class="text-2xl md:text-3xl font-bold font-display text-white mb-6"
+            >
+              Ready to Share Your Vision?
+            </h2>
+
+            <p class="text-gray-300 text-base md:text-lg mb-10 leading-relaxed">
+              Your next breakthrough is just one aspiration away. Join our
+              community and let's build the future together.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="write_aspiration.html"
+                class="inline-flex items-center justify-center bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:from-purple-600 hover:via-purple-700 hover:to-purple-800 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25"
+              >
+                <i class="bx bx-edit-alt mr-2 text-lg"></i>
+                Write Aspiration
+              </a>
+              <a
+                href="about.html"
+                class="inline-flex items-center justify-center bg-gradient-to-r from-indigo-500 via-indigo-600 to-blue-600 hover:from-indigo-600 hover:via-indigo-700 hover:to-blue-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/25"
+              >
+                <i class="bx bx-info-circle mr-2 text-lg"></i>
+                More About Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      Footer
+    ======================== -->
+    <footer class="mt-[4rem] bg-black">
+      <div class="w-full py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-700 to-indigo-700 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 10% 20%,rgba(255, 255, 255, 0.05) 0%,transparent 20%),radial-gradient(circle at 90% 80%,rgba(255, 255, 255, 0.05) 0%,transparent 20%);"></div>
+        <div class="relative z-10 text-center sm:mt-0 mx-auto w-5/6">
+          <h2 class="text-2xl md:text-3xl font-display font-bold text-white mb-4 leading-tight">
+            Unlock the Future of Innovation.
+          </h2>
+          <p class="text-gray-300 text-base md:text-lg mb-8 max-w-2xl mx-auto">
+            Get exclusive insights, project updates, and collaboration
+            opportunities directly to your inbox.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+            <input type="email" placeholder="Your email address" class="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-full text-white placeholder-white/70 focus:outline-none focus:border-white/50 focus:ring-2 focus:ring-white/20 transition-all duration-300"/>
+            <button class="px-8 py-4 bg-white text-purple-700 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:bg-gray-100">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="py-16 sm:mt-0 mx-auto w-5/6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div class="lg:col-span-2">
+            <div class="flex items-center mb-6">
+              <img src="./assets/img/logo.png" alt="NeuroLinked Logo" class="w-12 h-12 mr-3"/>
+              <h3 class="text-2xl font-display font-bold bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                NEUROLINKED
+              </h3>
+            </div>
+            <p class="text-gray-300 text-base md:text-lg mb-6 max-w-md">
+              NeuroLinked is the premier platform connecting visionary
+              innovators with groundbreaking projects. Discover, collaborate,
+              and build the future, together.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 bg-indigo-500/20 hover:bg-indigo-500 text-indigo-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                <i class="bx bxl-facebook text-lg"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-purple-500/20 hover:bg-purple-500 text-purple-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                <i class="bx bxl-twitter text-lg"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-pink-500/20 hover:bg-pink-500 text-pink-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                <i class="bx bxl-linkedin text-lg"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-indigo-500/20 hover:bg-indigo-500 text-indigo-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                <i class="bx bxl-instagram text-lg"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold text-lg mb-6">Pages</h4>
+            <ul class="space-y-3">
+              <li>
+                <a href="index.html" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300" >Home</a>
+              </li>
+              <li>
+                <a href="about.html" class="text-gray-300 hover:text-purple-400 transition-colors duration-300" >About Us</a>
+              </li>
+              <li>
+                <a href="explore_aspirations.html" class="text-gray-300 hover:text-pink-400 transition-colors duration-300" >Explore Aspirations</a>
+              </li>
+              <li>
+                <a href="write_aspiration.html" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300" >Write Aspiration</a>
+              </li>
+              <li>
+                <a href="explore_project.html" class="text-gray-300 hover:text-purple-400 transition-colors duration-300" >Explore Project</a>
+              </li>
+              <li>
+                <a href="createproject.html" class="text-gray-300 hover:text-pink-400 transition-colors duration-300" >Create Project</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold text-lg mb-6 tracking-wide">
+              Contact Us
+            </h4>
+            <ul class="space-y-3">
+              <li class="mb-2">
+                <p class="text-base text-gray-300">
+                  Have questions or ideas? We'd love to hear from you — let's
+                  connect and collaborate.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="bx bx-envelope text-indigo-400 text-xl drop-shadow-glow"></i>
+                <a href="#" class="text-base text-gray-300 hover:text-indigo-400 transition-colors duration-300">
+                  neurolinked@gmail.com
+                </a>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="bx bx-phone-call text-purple-400 text-xl drop-shadow-glow"></i>
+                <a href="#" class="text-base text-gray-300 hover:text-purple-400 transition-colors duration-300">
+                  +65 123-456-789
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-indigo-500/20 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2025 NEUROLINKED. All rights reserved. Built with
+              <i class="bx bxs-heart text-red-500 text-md"></i>
+              for innovators worldwide.
+            </p>
+            <div class="flex items-center space-x-6">
+              <span class="text-gray-400 text-sm">Made with</span>
+              <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-indigo-500 rounded-full animate-pulse"></div>
+                <div class="w-3 h-3 bg-purple-500 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
+                <div class="w-3 h-3 bg-pink-500 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =======================
+      to top button
+    ======================== -->
+    <button id="scrollToTop" class="fixed bottom-8 right-8 w-14 h-14 bg-[#0F172A] border border-indigo-500 text-indigo-400 hover:bg-gradient-to-br hover:from-indigo-600 hover:via-purple-700 hover:to-pink-500 hover:text-white hover:border-transparent rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-500 transform opacity-0 invisible scale-90 z-50">
+      <i class="bx bx-up-arrow-alt text-2xl"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/totop.js"></script>
+    <script src="./assets/js/load.js"></script>
+  </body>
+</html>

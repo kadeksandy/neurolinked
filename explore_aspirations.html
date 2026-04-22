@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Aspirations - NeuroLinked</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo.png" />
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <!-- css -->
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link href="./assets/css/load.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- =======================
+      preloader
+    ======================== -->
+    <div id="preloader" class="fixed inset-0 z-[9999999999999999] bg-black flex items-center justify-center">
+      <canvas id="networkCanvas" class="absolute inset-0 w-full h-full z-0"></canvas>
+      <div class="relative z-10 flex flex-col items-center gap-4">
+        <div class="neuro-spinner"></div>
+        <p class="text-white text-sm tracking-widest opacity-50 font-mono">
+          Loading
+        </p>
+      </div>
+    </div>
+
+    <!-- =======================
+      Header
+    ======================== -->
+    <header class="header" id="header">
+      <!-- desktop navigation -->
+      <nav class="nav-dekstop container mx-auto w-5/6">
+        <div class="nav-menu left">
+          <ul class="nav__list">
+            <li>
+              <a href="index.html" class="nav__link link">
+                <i class="bx bxs-home"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="dropdown__item">
+              <div class="nav__link">
+                Explore
+                <i class="bx bx-chevron-down dropdown__arrow"></i>
+              </div>
+              <ul class="dropdown__menu">
+                <li>
+                  <a href="explore_aspirations.html" class="dropdown__link">
+                    <i class="bx bx-compass"></i> Explore Aspirations
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <a href="write_aspiration.html" class="dropdown__link">
+                    <i class="bx bx-edit-alt"></i> Write Aspiration
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <a href="explore_project.html" class="dropdown__link">
+                    <i class="bx bx-folder-open"></i> Explore Projects
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="createproject.html" class="nav__link link">
+                <i class="bx bx-plus-circle"></i>
+                <span>Create Project</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav__data">
+          <a href="index.html" class="nav__logo">
+            <img
+              src="./assets/img/logo.png"
+              alt=""
+              style="width: 50px; height: 50px"
+            />
+            <h1
+              class="text-indigo-500 text-2xl font-bold bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+            >
+              NEUROLINKED
+            </h1>
+          </a>
+        </div>
+        <div class="nav-menu right">
+          <ul class="nav__list">
+            <li>
+              <a href="about.html" class="nav__link link">
+                <i class="bx bx-info-circle"></i>
+                <span>About</span>
+              </a>
+            </li>
+            <li>
+              <a href="login.html" class="nav__link link">
+                <i class="bx bx-log-in"></i>
+                <span>Sign In</span>
+              </a>
+            </li>
+            <div>
+              <a href="write_aspiration.html" class="nav__linkk">
+                <span class="btv"
+                  ><i class="bx bx-edit-alt wa"></i>Share Your Vision</span
+                >
+              </a>
+            </div>
+          </ul>
+        </div>
+      </nav>
+      <!-- mobile navigation -->
+      <nav class="nav-mobile container">
+        <div class="nav__data mx-auto w-5/6">
+          <a href="index.html" class="nav__logo logo_mobile">
+            <img
+              src="./assets/img/logo.png"
+              alt=""
+              style="width: 50px; height: 50px"
+            />
+            <h1
+              class="text-indigo-500 text-1xl font-bold bg-gradient-to-r from-indigo-400 via-indigo-500 to-indigo-600 bg-clip-text text-transparent"
+            >
+              NEUROLINKED
+            </h1>
+          </a>
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="bx bx-menu nav__burger"></i>
+            <i class="bx bx-x nav__close"></i>
+          </div>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li>
+              <a href="index.html" class="nav__link link">
+                <i class="bx bxs-home"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="dropdown__item">
+              <div class="nav__link">
+                Explore
+                <i class="bx bx-chevron-down dropdown__arrow"></i>
+              </div>
+              <ul class="dropdown__menu">
+                <li>
+                  <a href="explore_aspirations.html" class="dropdown__link">
+                    <i class="bx bx-compass"></i> Explore Aspirations
+                  </a>
+                </li>
+                <li>
+                  <a href="write_aspiration.html" class="dropdown__link">
+                    <i class="bx bx-edit-alt"></i> Write Aspiration
+                  </a>
+                </li>
+                <li>
+                  <a href="explore_project.html" class="dropdown__link">
+                    <i class="bx bx-folder-open"></i> Explore Projects
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="createproject.html" class="nav__link link">
+                <i class="bx bx-plus-circle"></i>
+                <span>Create Project</span>
+              </a>
+            </li>
+            <li>
+              <a href="about.html" class="nav__link link">
+                <i class="bx bx-info-circle"></i>
+                <span>About</span>
+              </a>
+            </li>
+            <li>
+              <a href="login.html" class="nav__link link">
+                <i class="bx bx-log-in"></i>
+                <span>Sign In</span>
+              </a>
+            </li>
+            <div>
+              <a href="write_aspiration.html" class="nav__linkk">
+                <span class="btv"
+                  ><i class="bx bx-edit-alt wa"></i>Share Your Vision</span
+                >
+              </a>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- =======================
+      Explore Aspirations
+    ======================== -->
+    <section class="">
+      <div class="relative w-full h-[50vh] overflow-hidden shadow-xl">
+        <img src="./assets/img/bg1.jpg" alt="" class="absolute top-0 left-0 w-full h-full object-cover">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-black via-black/40 to-black z-0 flex items-center justify-center"></div>
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent z-0"></div>
+
+        <div class="container mx-auto w-5/6 py-16 relative z-10">
+          <div class="text-center mb-12">
+            <h1 class="hero-title font-bold font-display mb-4 sm:mt-[8rem] mt-20">
+              Explore <span class="text-indigo-500">Aspirations</span>
+            </h1>
+            <p class="text-base md:text-lg text-gray-300 max-w-3xl mx-auto">
+              Discover innovative ideas from our community. Comment, and find your next collaboration opportunity.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mx-auto w-5/6 mt-10">
+        <div class="flex flex-wrap lg:justify-between text-center justify-center items-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold font-display text-white">Community Aspirations</h2>
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 my-5 w-full sm:w-auto sm:px-0 px-4">
+            <div class="relative w-full sm:w-64">
+              <select id="categoryFilter"
+                class="appearance-none w-full pr-10 bg-dark-card border border-dark-border rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <option value="all">All Categories</option>
+                <option value="technology">Technology</option>
+                <option value="art">Art & Design</option>
+                <option value="music">Music</option>
+                <option value="education">Education</option>
+                <option value="social">Social Impact</option>
+                <option value="healthcare">Healthcare</option>
+                <option value="environment">Environment</option>
+              </select>
+              <div class="pointer-events-none absolute right-3 top-1/2 transform -translate-y-1/2 text-white text-lg">
+                <i class='bx bx-chevron-down'></i>
+              </div>
+            </div>
+
+            <div class="relative w-full sm:w-64">
+              <select id="sortFilter"
+                class="appearance-none w-full pr-10 bg-dark-card border border-dark-border rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <option value="newest">Newest First</option>
+                <option value="popular">Most Popular</option>
+              </select>
+              <div class="pointer-events-none absolute right-3 top-1/2 transform -translate-y-1/2 text-white text-lg">
+                <i class='bx bx-chevron-down'></i>
+              </div>
+            </div>
+          </div>
+
+        <div id="aspirationsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================
+      Matcher
+    ======================== -->
+    <section class="ai-matcher-section bg-gradient-to-r from-purple-700/20 to-indigo-700/20 sm:mb-[8rem] mb-0 sm:mt-[8rem] mt-10">
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <!-- top -->
+        <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/100 via-black/40 to-transparent"></div>
+        <!-- bottom -->
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/100 via-black/40 to-transparent"></div>
+      </div>
+
+      
+      <div class="mx-auto w-5/6 z-1 relative py-20">
+        <div class="mb-8 text-center">
+          <h1 class="text-2xl md:text-3xl font-bold mb-2 text-white">
+            AI Collaboration Matcher
+          </h1>
+          <p class="text-gray-400 text-base md:text-lg">Let our AI help you find the perfect collaborators and projects that match your interests and skills.</p>
+        </div>
+
+        <div class="mx-auto">
+          <div class="card mb-8 bg-[#1E293B]">
+            <h3 class="text-xl font-bold mb-4">Describe Your Idea or Skills</h3>
+            <textarea id="ideaInput" placeholder="Tell us about your project idea, skills, or what you're looking for in a collaboration..." class="w-full bg-neutral-950 border border-neutral-600 rounded-lg p-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"  rows="4"></textarea>
+            
+            <div class="flex flex-col sm:flex-row gap-4 mt-6 w-full">
+              <div class="relative w-full sm:w-auto flex-1">
+                <select id="skillsNeeded" class="appearance-none w-full bg-neutral-950 border border-neutral-600 rounded-lg px-4 py-2 pr-10 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                  <option value="">Skills Needed</option>
+                  <option value="programming">Programming</option>
+                  <option value="design">Design</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="writing">Writing</option>
+                  <option value="business">Business</option>
+                </select>
+                <div class="pointer-events-none absolute right-3 top-1/2 transform -translate-y-1/2 text-white text-lg">
+                  <i class='bx bx-chevron-down'></i>
+                </div>
+              </div>
+
+              <div class="relative w-full sm:w-auto flex-1">
+                <select id="projectType" class="appearance-none w-full bg-neutral-950 border border-neutral-600 rounded-lg px-4 py-2 pr-10 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                  <option value="">Project Type</option>
+                  <option value="startup">Startup</option>
+                  <option value="creative">Creative Project</option>
+                  <option value="research">Research</option>
+                  <option value="nonprofit">Non-profit</option>
+                </select>
+                <div class="pointer-events-none absolute right-3 top-1/2 transform -translate-y-1/2 text-white text-lg">
+                  <i class='bx bx-chevron-down'></i>
+                </div>
+              </div>
+            </div>
+
+            <button id="findMatchesBtn" class="button px-2 mt-6 inline-flex items-center justify-center bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25">
+              <svg class="svgIcon" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path></svg>
+              Find Match
+            </button>
+          </div>
+
+          <!-- Loading -->
+          <div id="loadingSection" class="hidden card text-center bg-[#1E293B] p-8">
+              <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mb-4"></div>
+              <h3 class="text-xl font-semibold mb-2">AI is analyzing your profile...</h3>
+              <p class="text-gray-400">Finding the perfect matches for you</p>
+          </div>
+
+          <!-- Results -->
+          <div id="resultsSection" class="hidden">
+            <div class="card mb-8 bg-[#1E293B]">
+              <h3 class="text-2xl font-bold mb-2 text-2xl md:text-3xl">Perfect Matches Found!</h3>
+              <p class="text-gray-400 mb-6 text-base md:text-lg">Based on your profile, we found <span id="matchCount">5</span> potential collaborators</p>
+              
+              <div class="bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-lg p-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-semibold text-white">Overall Match Score</span>
+                  <span class="text-2xl font-bold text-white">94%</span>
+                </div>
+                <div class="w-full bg-white bg-opacity-20 rounded-full h-2 mt-2">
+                  <div class="bg-white h-2 rounded-full" style="width: 94%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="collaboratorsList">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    
+    <!-- =======================
+      Footer
+    ======================== -->
+    <footer class="mt-[4rem] bg-black">
+      <div class="w-full py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-700 to-indigo-700 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 10% 20%,rgba(255, 255, 255, 0.05) 0%,transparent 20%),radial-gradient(circle at 90% 80%,rgba(255, 255, 255, 0.05) 0%,transparent 20%);"></div>
+        <div class="relative z-10 text-center sm:mt-0 mx-auto w-5/6">
+          <h2 class="text-2xl md:text-3xl font-display font-bold text-white mb-4 leading-tight">
+            Unlock the Future of Innovation.
+          </h2>
+          <p class="text-gray-300 text-base md:text-lg mb-8 max-w-2xl mx-auto">
+            Get exclusive insights, project updates, and collaboration
+            opportunities directly to your inbox.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+            <input type="email" placeholder="Your email address" class="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-full text-white placeholder-white/70 focus:outline-none focus:border-white/50 focus:ring-2 focus:ring-white/20 transition-all duration-300"/>
+            <button class="px-8 py-4 bg-white text-purple-700 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:bg-gray-100">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="py-16 sm:mt-0 mx-auto w-5/6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div class="lg:col-span-2">
+            <div class="flex items-center mb-6">
+              <img src="./assets/img/logo.png" alt="NeuroLinked Logo" class="w-12 h-12 mr-3"/>
+              <h3 class="text-2xl font-display font-bold bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                NEUROLINKED
+              </h3>
+            </div>
+            <p class="text-gray-300 text-base md:text-lg mb-6 max-w-md">
+              NeuroLinked is the premier platform connecting visionary
+              innovators with groundbreaking projects. Discover, collaborate,
+              and build the future, together.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 bg-indigo-500/20 hover:bg-indigo-500 text-indigo-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                <i class="bx bxl-facebook text-lg"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-purple-500/20 hover:bg-purple-500 text-purple-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                <i class="bx bxl-twitter text-lg"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-pink-500/20 hover:bg-pink-500 text-pink-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                <i class="bx bxl-linkedin text-lg"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-indigo-500/20 hover:bg-indigo-500 text-indigo-400 hover:text-white rounded-full flex items-center justify-center transition-all duration-300">
+                <i class="bx bxl-instagram text-lg"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold text-lg mb-6">Pages</h4>
+            <ul class="space-y-3">
+              <li>
+                <a href="index.html" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300" >Home</a>
+              </li>
+              <li>
+                <a href="about.html" class="text-gray-300 hover:text-purple-400 transition-colors duration-300" >About Us</a>
+              </li>
+              <li>
+                <a href="explore_aspirations.html" class="text-gray-300 hover:text-pink-400 transition-colors duration-300" >Explore Aspirations</a>
+              </li>
+              <li>
+                <a href="write_aspiration.html" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300" >Write Aspiration</a>
+              </li>
+              <li>
+                <a href="explore_project.html" class="text-gray-300 hover:text-purple-400 transition-colors duration-300" >Explore Project</a>
+              </li>
+              <li>
+                <a href="createproject.html" class="text-gray-300 hover:text-pink-400 transition-colors duration-300" >Create Project</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold text-lg mb-6 tracking-wide">
+              Contact Us
+            </h4>
+            <ul class="space-y-3">
+              <li class="mb-2">
+                <p class="text-base text-gray-300">
+                  Have questions or ideas? We'd love to hear from you — let's
+                  connect and collaborate.
+                </p>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="bx bx-envelope text-indigo-400 text-xl drop-shadow-glow"></i>
+                <a href="#" class="text-base text-gray-300 hover:text-indigo-400 transition-colors duration-300">
+                  neurolinked@gmail.com
+                </a>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="bx bx-phone-call text-purple-400 text-xl drop-shadow-glow"></i>
+                <a href="#" class="text-base text-gray-300 hover:text-purple-400 transition-colors duration-300">
+                  +65 123-456-789
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-indigo-500/20 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2025 NEUROLINKED. All rights reserved. Built with
+              <i class="bx bxs-heart text-red-500 text-md"></i>
+              for innovators worldwide.
+            </p>
+            <div class="flex items-center space-x-6">
+              <span class="text-gray-400 text-sm">Made with</span>
+              <div class="flex items-center space-x-2">
+                <div class="w-3 h-3 bg-indigo-500 rounded-full animate-pulse"></div>
+                <div class="w-3 h-3 bg-purple-500 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
+                <div class="w-3 h-3 bg-pink-500 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =======================
+      to top button
+    ======================== -->
+    <button id="scrollToTop" class="fixed bottom-8 right-8 w-14 h-14 bg-[#0F172A] border border-indigo-500 text-indigo-400 hover:bg-gradient-to-br hover:from-indigo-600 hover:via-purple-700 hover:to-pink-500 hover:text-white hover:border-transparent rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-500 transform opacity-0 invisible scale-90 z-50">
+      <i class="bx bx-up-arrow-alt text-2xl"></i>
+    </button>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/explore_aspiration.js"></script>
+    <script src="./assets/js/totop.js"></script>
+    <script src="./assets/js/load.js"></script>
+  </body>
+</html>

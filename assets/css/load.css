@@ -1,0 +1,22 @@
+.neuro-spinner {
+  width: 64px;
+  height: 64px;
+  border: 6px solid transparent;
+  border-top: 6px solid #8b5cf6;
+  border-right: 6px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 1.2s ease-in-out infinite;
+  box-shadow: 0 0 16px #8b5cf6, 0 0 24px #6366f1 inset;
+  background: radial-gradient(
+    circle at center,
+    rgba(139, 92, 246, 0.15) 0%,
+    transparent 70%
+  );
+  transition: all 0.3s ease;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
